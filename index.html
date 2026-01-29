@@ -38,6 +38,7 @@ header {
   text-align: center;
   color: white;
   padding: 40px 20px;
+  overflow: hidden;
 }
 
 .hero-content {
@@ -319,12 +320,231 @@ p a:hover {
   text-decoration: underline;
 }
 
+/* ===== PROMO CAROUSEL ===== */
+.promo-card {
+  background: #fff;
+  border: 2px solid #c9a44c;
+  border-radius: 18px;
+  padding: 26px 22px;
+  max-width: 360px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+  line-height: 1.4;
+    max-height: 85vh;
+  overflow-y: auto;
+
+}
+
+/* TÍTULO */
+.promo-card h2 {
+  font-size: 1.35rem;
+  margin-bottom: 24px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+    color: #111;
+
+}
+
+/* CADA PROMO */
+.promo-item {
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.promo-item:last-of-type {
+  border-bottom: none;
+}
+
+/* NOMBRE */
+.promo-item h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+/* DESCRIPCIÓN */
+.promo-desc {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+/* PRECIO */
+.promo-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #000;
+}
+
+/* TEXTO EXTRA */
+.promo-extra {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* LOTO */
+.loto {
+  margin: 22px auto 10px;
+  font-size: 26px;
+  color: #c9a44c;
+  opacity: 0.85;
+}
+
+/* BOTÓN */
+.promo-card button {
+  margin-top: 14px;
+  padding: 12px 26px;
+  background: #c9a44c;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===== PROMO OVERLAY ===== */
+#promo-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+header {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Carrusel de fondo */
+.carousel-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+.carousel-bg img.active {
+  opacity: 1;
+}
+
+/* Oscurecer un poco para que el logo se lea bien */
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+/* Asegurar que el contenido del header quede arriba */
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+.carousel-bg img {
+  opacity: 0;
+  animation: carouselFade 15s infinite;
+}
+
+.carousel-bg img:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.carousel-bg img:nth-child(2) {
+  animation-delay: 5s;
+}
+
+.carousel-bg img:nth-child(3) {
+  animation-delay: 10s;
+}
+
+@keyframes carouselFade {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.promo-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 22px;
+  background: #000;
+  color: #c9a44c;
+  border-radius: 22px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.promo-btn:hover {
+  background: #c9a44c;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(201,164,76,0.45);
+}
+
+
+.heart {
+  margin: 22px auto 10px;
+  font-size: 30px;
+  color: #c9a44c;
+  animation: heartBeat 1.6s infinite;
+  opacity: 0.9;
+}
+
+@keyframes heartBeat {
+  0%   { transform: scale(1); }
+  25%  { transform: scale(1.15); }
+  40%  { transform: scale(1); }
+  60%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.valentine-text {
+  font-size: 0.8rem;
+  letter-spacing: 1.2px;
+  font-weight: 300;
+  color: #c9a44c;
+  margin-top: -14px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
 </style>
 </head>
 
 <body>
-
+<div class="header-content">
 <header>
+  <div class="carousel-bg">
+    <img src="img/masaje1.jpg" class="active">
+    <img src="img/facial1.jpg">
+    <img src="img/relajacion1.jpg">
+</div>
+
+
+
   <div class="hero-content">
 
     <div class="logo-container">
@@ -351,7 +571,7 @@ p a:hover {
 <!-- TODO LO DEMÁS DE TU PÁGINA QUEDA EXACTAMENTE IGUAL -->
 
 <section>
-  <h2 class="section-title">Masajes</h2>
+  <h2 class="section-title" id="masajes">Masajes</h2>
 
   <div class="card" tabindex="0">
     <h3>Masaje relajante</h3>
@@ -523,7 +743,98 @@ p a:hover {
   </a>
 </div>
 
-<!-- SERVICIOS, PRECIOS, PAQUETES Y FOOTER SIN CAMBIOS -->
+<!-- PROMO POPUP -->
+<div id="promo-overlay">
+  <div class="promo-card">
+
+    <h2>Promociones de Febrero</h2>
+    <p class="valentine-text">
+  Feliz día del amor y la amistad ✨
+</p>
+
+
+   <div class="promo-item">
+  <h3>3 Masajes Relajantes</h3>
+  <div class="promo-price">$2,500</div>
+ 
+
+  <a 
+    href="https://wa.me/525549001520?text=Hola%20me%20interesa%20la%20promocion%20de%203%20Masajes%20Relajantes%20de%20Febrero.%20Me%20puedes%20dar%20informacion%3F"
+    target="_blank"
+    class="promo-btn"
+  >
+    Me interesa
+  </a>
+</div>
+
+
+    <div class="promo-item">
+      <h3>Paquete Exprés</h3>
+      <div class="promo-desc">4 masajes exprés (30 minutos)</div>
+      <div class="promo-price">$2,000</div>
+        <a 
+    href="https://wa.me/525549001520?text=Hola%20me%20interesa%20el%20Paquete%20Expres%20de%204%20masajes%20de%2030%20minutos.%20Me%20das%20informacion%3F?
+"
+    target="_blank"
+    class="promo-btn"
+  >
+    Me interesa
+  </a>
+    </div>
+
+    <div class="promo-item">
+      <h3>Facial Limpieza Profunda</h3>
+      <div class="promo-desc">+ Masaje de espalda</div>
+      <div class="promo-price">$1,200</div>
+        <a 
+    href="https://wa.me/525549001520?text=Hola%20me%20interesa%20la%20promocion%20de%203%20Masajes%20Relajantes%20de%20Febrero.%20Me%20puedes%20dar%20informacion%3F"
+    target="_blank"
+    class="promo-btn"
+  >
+    Me interesa
+  </a>
+    </div>
+
+    <div class="heart">❤</div>
+
+
+    <button onclick="closePromo()">Continuar</button>
+
+  </div>
+</div>
+
+
+
+<script>
+const promo = document.getElementById("promo-overlay");
+const masajesSection = document.getElementById("masajes");
+let promoShown = false;
+
+window.addEventListener("scroll", () => {
+  if (!promoShown) {
+    const rect = masajesSection.getBoundingClientRect();
+    if (rect.top < window.innerHeight / 1.3) {
+      promo.style.display = "flex";
+      promoShown = true;
+    }
+  }
+});
+
+function closePromo() {
+  promo.style.display = "none";
+}
+</script>
+
+<script>
+  const slides = document.querySelectorAll(".carousel-bg img");
+  let index = 0;
+
+  setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 4000);
+</script>
 
 </body>
 </html>
