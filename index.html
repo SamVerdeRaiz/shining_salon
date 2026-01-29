@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shining Salon & Barber</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f7f7f7;
+  color: #222;
+  
+}
+
+/* ===== HERO HEADER PRO ===== */
+header {
+  position: relative;
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url("fondo.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 40px 20px;
+}
+
+.hero-content {
+  max-width: 520px;
+  width: 100%;
+}
+
+
+/* LOGO CIRCULAR PRO */
+.logo-container {
+  width: 260px;
+  height: auto;
+  margin: 0 auto 35px;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.logo-container img {
+  width: 100%;
+  filter:
+    drop-shadow(0 0 25px rgba(201,164,76,0.65))
+    drop-shadow(0 10px 40px rgba(0,0,0,0.9));
+}
+
+
+/* TEXTO */
+header h1 {
+  font-size: clamp(22px, 5vw, 32px);
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.microcopy {
+  margin-top: 16px;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+/* BOTÓN */
+.btn {
+  display: inline-block;
+  margin-top: 26px;
+  padding: 14px 34px;
+  background: #c9a44c;
+  color: black;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  box-shadow: 0 10px 22px rgba(201,164,76,0.45);
+}
+
+/* RESPONSIVE EXTREMO */
+@media (max-width: 480px) {
+  .logo-container {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  border-left: 4px solid #c9a44c;
+  padding-left: 10px;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #c9a44c;
+  margin-top: 6px;
+}
+
+/* CARDS */
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.06);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 4px;
+}
+
+.price {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #c9a44c;
+}
+
+/* FOOTER */
+footer {
+  background: #000;
+  color: white;
+  text-align: center;
+  padding:60px 20px 90px;
+  font-size: 14px;
+}
+
+.social-links {
+  margin-top: 15px;
+}
+
+.social-links a {
+  margin: 0 8px;
+  color: #c9a44c;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* BOTTOM BAR */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  padding: 12px;
+  text-align: center;
+  z-index: 100;
+}
+
+.bottom-bar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+
+}
+
+.brand-logo img{
+  max-width: 380px;
+}
+
+.brand-logo::after{
+  inset:-60px;
+  filter:blur(35px);
+
+}
+/* === CTA ANIMADO PREMIUM === */
+.btn {
+  animation: pulseGold 2.5s infinite;
+}
+
+@keyframes pulseGold {
+  0%   { transform: scale(1); box-shadow: 0 10px 22px rgba(201,164,76,0.45); }
+  50%  { transform: scale(1.05); box-shadow: 0 15px 35px rgba(201,164,76,0.75); }
+  100% { transform: scale(1); }
+}
+
+/* =====================
+   TOOLTIP SPA PREMIUM - MASAJES (FIX REAL)
+   ===================== */
+
+.card {
+  position: relative;
+  overflow: visible; /* CLAVE */
+}
+
+/* Tooltip */
+.card .tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 14px);
+  transform: translateX(-50%) translateY(8px);
+  background: rgba(0, 0, 0, 0.88);
+  color: #f5f5f5;
+  padding: 14px 18px;
+  border-radius: 16px;
+  font-size: 13px;
+  line-height: 1.45;
+  width: 90%;
+  max-width: 280px;
+  text-align: center;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  z-index: 999; /* CLAVE */
+  transition: all 0.35s ease;
+
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+}
+
+/* Flecha */
+.card .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 7px;
+  border-style: solid;
+  border-color: rgba(0,0,0,0.88) transparent transparent transparent;
+}
+
+/* Activación */
+.card:hover .tooltip,
+.card:focus-within .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* =====================
+   ICONOS SOCIALES PREMIUM
+   ===================== */
+
+.social-icons {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.social-icons a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid #c9a44c; /* dorado */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9a44c;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.35s ease;
+}
+
+.social-icons a:hover {
+  background: #c9a44c;
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(201,164,76,0.45);
+}
+
+
+p a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="hero-content">
+
+    <div class="logo-container">
+      <img src="logo.png" alt="Shining Salon & Barber">
+    </div>
+
+  
+    <!-- QUITA ESTA LÍNEA SI NO QUIERES TEXTO -->
+ 
+
+    <p>Bienestar, estética y experiencia profesional</p>
+
+    <a class="btn" href="https://wa.me/525549001520" target="_blank">
+      Agendar cita
+    </a>
+
+    <p class="microcopy">
+      Atención personalizada · Citas con anticipación
+    </p>
+
+  </div>
+</header>
+
+<!-- TODO LO DEMÁS DE TU PÁGINA QUEDA EXACTAMENTE IGUAL -->
+
+<section>
+  <h2 class="section-title">Masajes</h2>
+
+  <div class="card" tabindex="0">
+    <h3>Masaje relajante</h3>
+    <p>30 min $600 · 60 min</p>
+    <div class="price">$990</div>
+    <div class="tooltip">
+      Masaje suave y envolvente que reduce el estrés, mejora la circulación y
+      genera una profunda sensación de calma y equilibrio.
+    </div>
+  </div>
+
+  <div class="card" tabindex="0">
+    <h3>Masaje descontracturante</h3>
+    <p>60 minutos</p>
+    <div class="price">$1090</div>
+    <div class="tooltip">
+      Terapia de presión profunda enfocada en liberar contracturas musculares,
+      aliviar tensión acumulada y mejorar la movilidad corporal.
+    </div>
+  </div>
+
+  <div class="card" tabindex="0">
+    <h3>Reflexología podal</h3>
+    <p>40 minutos</p>
+    <div class="price">$690</div>
+    <div class="tooltip">
+      Técnica terapéutica que estimula puntos reflejos en los pies para equilibrar
+      órganos, reducir estrés y restaurar la energía vital.
+    </div>
+  </div>
+
+  <div class="card" tabindex="0">
+    <h3>Piedras calientes</h3>
+    <p>1 hora 30 minutos</p>
+    <div class="price">$1490</div>
+    <div class="tooltip">
+      Experiencia sensorial con piedras volcánicas que relaja profundamente los
+      músculos, armoniza la energía y mejora la circulación.
+    </div>
+  </div>
+
+  <div class="card" tabindex="0">
+    <h3>Masaje deportivo con ventosas</h3>
+    <p>60 minutos</p>
+    <div class="price">$1100</div>
+    <div class="tooltip">
+      Terapia especializada para recuperación muscular que mejora el flujo
+      sanguíneo, libera toxinas y acelera la regeneración corporal.
+    </div>
+  </div>
+
+  <div class="card" tabindex="0">
+    <h3>Masaje tailandés</h3>
+    <p>1 hora 20 minutos</p>
+    <div class="price">$1500</div>
+    <div class="tooltip">
+      Técnica ancestral que combina estiramientos y presión corporal para liberar
+      bloqueos energéticos y revitalizar todo el cuerpo.
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <h2 class="section-title">Faciales</h2>
+
+  <div class="card">
+    <h3>Antiacné con extracción profunda</h3>
+    <p>Dermoabrasión</p>
+    <div class="price">$1200</div>
+  </div>
+
+  <div class="card">
+    <h3>Hidratante con masaje</h3>
+    <p>Piel madura</p>
+    <div class="price">$1200</div>
+  </div>
+
+  <div class="card">
+    <h3>Hidratante exprés</h3>
+    <p>Ultrasonido</p>
+    <div class="price">$800</div>
+  </div>
+
+  <div class="card">
+    <h3>Limpieza profunda</h3>
+    <p>Skin y dermoabrasión</p>
+    <div class="price">$1300</div>
+  </div>
+
+  <div class="card">
+    <h3>Lifting facial</h3>
+    <p>Radiofrecuencia</p>
+    <div class="price">$1300</div>
+  </div>
+
+  <p style="margin-top:15px;font-size:14px;color:#555;">
+    Cada tratamiento facial incluye masaje de pies de cortesía.
+  </p>
+</section>
+
+<section>
+  <h2 class="section-title">Paquetes</h2>
+
+  <div class="card">
+    <h3>3 sesiones masaje relajante</h3>
+    <p>60 minutos cada sesión</p>
+    <div class="price">$3100</div>
+  </div>
+
+  <div class="card">
+    <h3>3 sesiones masaje descontracturante</h3>
+    <p>60 minutos cada sesión</p>
+    <div class="price">$3400</div>
+  </div>
+
+  <div class="card">
+    <h3>3 sesiones reflexología podal</h3>
+    <p>30 minutos cada sesión</p>
+    <div class="price">$2100</div>
+  </div>
+
+  <div class="card">
+    <h3>Paquete facial limpieza profunda</h3>
+    <p>3 sesiones</p>
+    <div class="price">$3200</div>
+  </div>
+
+  <div class="card">
+    <h3>Paquete hidratante piel madura</h3>
+    <p>3 sesiones</p>
+    <div class="price">$3200</div>
+  </div>
+
+  <div class="card">
+    <h3>Paquete lifting facial</h3>
+    <p>3 sesiones</p>
+    <div class="price">$3400</div>
+  </div>
+</section>
+
+<footer>
+  <p>Agenda tu cita</p>
+
+<p>
+  WhatsApp:
+  <a href="https://wa.me/5215549001520" target="_blank">55 49 00 15 20</a>
+  ·
+  <a href="https://wa.me/5215523459805" target="_blank">55 23 45 98 05</a>
+</p>
+
+<p>Shining Salon & Barber</p>
+
+  <div class="social-icons">
+  <a href="https://www.facebook.com/profile.php?id=61556599434150" target="_blank" aria-label="Facebook">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>
+
+  <a href="https://www.instagram.com/shiningsalonmx/" target="_blank" aria-label="Instagram">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+
+  <a href="https://www.tiktok.com/@shining.salnbarbe" target="_blank" aria-label="TikTok">
+    <i class="fa-brands fa-tiktok"></i>
+  </a>
+
+  <a href="mailto:shining.salon.barber.2024@gmail.com" aria-label="Correo">
+    <i class="fa-regular fa-envelope"></i>
+  </a>
+</div>
+
+<!-- SERVICIOS, PRECIOS, PAQUETES Y FOOTER SIN CAMBIOS -->
+
+</body>
+</html>
