@@ -557,20 +557,46 @@ header::after {
   background-position: center;
 }
 
-/* overlay elegante */
+/* OVERLAY */
+#promo-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* TARJETA */
+.promo-card {
+  position: relative;
+  width: 90%;
+  max-width: 420px;
+  padding: 25px;
+  border-radius: 18px;
+  background-image: url("images/loto.jpg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+/* CAPA BLANCA ELEGANTE */
 .promo-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.88);
   z-index: 1;
 }
 
-/* contenido encima */
-.promo-card > * {
+/* CONTENIDO */
+.promo-card * {
   position: relative;
   z-index: 2;
-      }
+  color: #111;
+}
 /* TITULO */
 .promo-card h2 {
   text-align: center;
@@ -950,9 +976,25 @@ function closePromo() {
     slides[index].classList.add("active");
   }, 4000);
 </script>
+<script>
+  function openPromo() {
+    document.getElementById("promo-overlay").style.display = "flex";
+  }
 
+  function closePromo() {
+    document.getElementById("promo-overlay").style.display = "none";
+    localStorage.setItem("promoSeen", "true");
+  }
+
+  window.addEventListener("load", () => {
+    if (!localStorage.getItem("promoSeen")) {
+      setTimeout(openPromo, 4000); // 4 segundos
+    }
+  });
+</script>
 </body>
 </html>
+
 
 
 
