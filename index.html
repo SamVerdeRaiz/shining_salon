@@ -670,6 +670,82 @@ header::after {
   to { background-position: center bottom; }
 }
       
+
+/* Fondo oscuro alrededor */
+.promo-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Contenedor del popup */
+.promo-popup {
+  background: rgba(20, 20, 20, 0.95);
+  backdrop-filter: blur(6px);
+  width: 90%;
+  max-width: 420px;
+  max-height: 80vh;              /* 👈 clave para el scroll */
+  border-radius: 20px;
+  overflow-y: auto;              /* 👈 scroll interno */
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  animation: slideUp 0.5s ease;
+  position: relative;
+}
+
+/* Header donde va la X */
+.promo-header {
+  position: sticky;              /* 👈 magia */
+  top: 0;
+  background: rgba(20, 20, 20, 0.95);
+  padding: 14px 18px;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 10;
+  border-radius: 20px 20px 0 0;
+}
+
+/* Botón cerrar */
+.promo-close {
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.promo-close:hover {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
+
+/* Contenido */
+.promo-content {
+  padding: 10px 22px 28px;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
       
 </style>
       
@@ -886,17 +962,32 @@ header::after {
 
 <!-- PROMO POPUP -->
 <div id="promo-overlay">
-  <div class="promo-card">
 
+  <div class="promo-popup">
+    <button class="promo-close" onclick="closePromo()">×</button>
     <h2>Promociones de Febrero</h2>
+    <br>
     <p class="valentine-text">
   Feliz día del amor y la amistad ✨
 </p>
 
+    <div class="promo-item">
+      <h3>Facial Limpieza Profunda</h3>
+      <div class="promo-desc">+ Masaje de espalda</div>
+      <div class="promo-price">$1,200</div>
+        <a 
+    href="https://wa.me/525549001520?text=Hola%20me%20interesa%20la%20promocion%20de%203%20Masajes%20Relajantes%20de%20Febrero.%20Me%20puedes%20dar%20informacion%3F"
+    target="_blank"
+    class="promo-btn"
+  >
+    Me interesa
+  </a>
+    </div>
+
 
    <div class="promo-item">
   <h3>3 Masajes Relajantes</h3>
-  <div class="promo-price">$2,500</div>
+  <div class="promo-price">$2,600</div>
  
 
   <a 
@@ -907,6 +998,20 @@ header::after {
     Me interesa
   </a>
 </div>
+
+<div class="promo-item">
+  <h3>3 Sesiones de Masaje Podal</h3>
+  <div class="promo-price">$1,860</div>
+
+  <a 
+    href="https://wa.me/525549001520?text=Hola%20me%20interesa%20la%20promocion%20de%203%20Sesiones%20de%20Masaje%20Podal.%20Me%20puedes%20dar%20informacion%3F"
+    target="_blank"
+    class="promo-btn"
+  >
+    Me interesa
+  </a>
+</div>
+
 
 
     <div class="promo-item">
@@ -922,27 +1027,37 @@ header::after {
     Me interesa
   </a>
     </div>
-
     <div class="promo-item">
-      <h3>Facial Limpieza Profunda</h3>
-      <div class="promo-desc">+ Masaje de espalda</div>
-      <div class="promo-price">$1,200</div>
-        <a 
-    href="https://wa.me/525549001520?text=Hola%20me%20interesa%20la%20promocion%20de%203%20Masajes%20Relajantes%20de%20Febrero.%20Me%20puedes%20dar%20informacion%3F"
+  <h3>3 Masajes Descontracturantes</h3>
+  <div class="promo-price">$2,900</div>
+
+  <a 
+    href="https://wa.me/525549001520?text=Hola%20me%20interesa%20la%20promocion%20de%203%20Masajes%20Descontracturantes.%20Me%20puedes%20dar%20informacion%3F"
     target="_blank"
     class="promo-btn"
   >
     Me interesa
   </a>
-    </div>
-
-    <div class="heart">❤</div>
+</div>
 
 
-    <button onclick="closePromo()">Continuar</button>
-
+    
   </div>
 </div>
+
+<div class="promo-item">
+  <h3>3 Masajes Descontracturantes</h3>
+  <div class="promo-price">$2,900</div>
+
+  <a 
+    href="https://wa.me/525549001520?text=Hola%20me%20interesa%20la%20promocion%20de%203%20Masajes%20Descontracturantes.%20Me%20puedes%20dar%20informacion%3F"
+    target="_blank"
+    class="promo-btn"
+  >
+    Me interesa
+  </a>
+</div>
+
 
 
 
@@ -994,6 +1109,7 @@ function closePromo() {
 </script>
 </body>
 </html>
+
 
 
 
