@@ -595,14 +595,14 @@ header::after {
 .promo-card * {
   position: relative;
   z-index: 2;
-  color: #111;
+  color: #f2f5f3;
 }
 /* TITULO */
 .promo-card h2 {
   text-align: center;
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #111;
+  color: #f2f5f3;
 }
 
 /* TEXTO AMOR */
@@ -615,18 +615,33 @@ header::after {
 
 /* ITEMS */
 .promo-item {
-  border: 1px solid rgba(200, 170, 90, 0.35);
-  border-radius: 12px;
-  padding: 14px;
-  margin-bottom: 15px;
-  background: rgba(255,255,255,0.85);
+  position: relative;
+  overflow: hidden;
 }
+
+.promo-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("img/zen-texture.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+  z-index: 0;
+}
+
+.promo-item > * {
+  position: relative;
+  z-index: 1;
+}
+
+
 
 /* PRECIOS */
 .promo-price {
   font-size: 1.4rem;
   font-weight: bold;
-  color: #b89b4f;
+  color: #b9c7c0;
   margin: 6px 0;
 }
 
@@ -1027,36 +1042,12 @@ header::after {
     Me interesa
   </a>
     </div>
-    <div class="promo-item">
-  <h3>3 Masajes Descontracturantes</h3>
-  <div class="promo-price">$2,900</div>
-
-  <a 
-    href="https://wa.me/525549001520?text=Hola%20me%20interesa%20la%20promocion%20de%203%20Masajes%20Descontracturantes.%20Me%20puedes%20dar%20informacion%3F"
-    target="_blank"
-    class="promo-btn"
-  >
-    Me interesa
-  </a>
-</div>
-
+  
 
     
   </div>
 </div>
 
-<div class="promo-item">
-  <h3>3 Masajes Descontracturantes</h3>
-  <div class="promo-price">$2,900</div>
-
-  <a 
-    href="https://wa.me/525549001520?text=Hola%20me%20interesa%20la%20promocion%20de%203%20Masajes%20Descontracturantes.%20Me%20puedes%20dar%20informacion%3F"
-    target="_blank"
-    class="promo-btn"
-  >
-    Me interesa
-  </a>
-</div>
 
 
 
@@ -1109,11 +1100,5 @@ function closePromo() {
 </script>
 </body>
 </html>
-
-
-
-
-
-
 
 
