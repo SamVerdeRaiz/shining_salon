@@ -96,6 +96,8 @@ header p {
   border-radius: 30px;
   font-weight: 600;
   box-shadow: 0 10px 22px rgba(201,164,76,0.45);
+  position: relative;
+  z-index: 10;
 }
 
 /* RESPONSIVE EXTREMO */
@@ -361,7 +363,7 @@ p a:hover {
   font-size: 1.05rem;
   font-weight: 600;
   margin-bottom: 6px;
-  color: #;
+  color: black ;
 }
 
 /* DESCRIPCIÓN */
@@ -407,7 +409,8 @@ p a:hover {
 #promo-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0,0,0,0.75
+  );
   
   display: none;
   align-items: center;
@@ -504,13 +507,7 @@ header::after {
 }
 
 
-.heart {
-  margin: 22px auto 10px;
-  font-size: 30px;
-  color: #c9a44c;
-  animation: heartBeat 1.6s infinite;
-  opacity: 0.9;
-}
+
 
 @keyframes heartBeat {
   0%   { transform: scale(1); }
@@ -561,7 +558,7 @@ header::after {
 #promo-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background-image: rgba(0,0,0,0.6);
   display: none;
   justify-content: center;
   align-items: center;
@@ -575,7 +572,7 @@ header::after {
   max-width: 420px;
   padding: 25px;
   border-radius: 18px;
-  background-image: url("img/loto.jpg");
+  background-image: url("img/zen-texture.jpg");
   background-size: cover;
   background-position: center;
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
@@ -596,6 +593,7 @@ header::after {
   position: relative;
   z-index: 2;
   color: #f2f5f3;
+
 }
 /* TITULO */
 .promo-card h2 {
@@ -603,6 +601,7 @@ header::after {
   font-size: 1.5rem;
   margin-bottom: 10px;
   color: #f2f5f3;
+
 }
 
 /* TEXTO AMOR */
@@ -617,7 +616,9 @@ header::after {
 .promo-item {
   position: relative;
   overflow: hidden;
+
 }
+
 
 .promo-item::before {
   content: "";
@@ -700,7 +701,9 @@ header::after {
 
 /* Contenedor del popup */
 .promo-popup {
-  background: rgba(20, 20, 20, 0.95);
+  background-image:url("img/amor1.jpg") ;
+    background-size: cover;        /* Ajusta la imagen al contenedor */
+  background-position: center;   /* Centra la parte importante */
   backdrop-filter: blur(6px);
   width: 90%;
   max-width: 420px;
@@ -812,9 +815,9 @@ header::after {
 <div class="header-content">
 <header>
   <div class="carousel-bg">
-    <img src="img/masaje1.jpg" class="active">
-    <img src="img/facial1.jpg">
-    <img src="img/relajacion1.jpg">
+    <img src="img/masaje1.jpg" loading="lazy" class="active">
+    <img src="img/facial1.jpg" loading="lazy">
+    <img src="img/relajacion1.jpg" loading="lazy">
 </div>
 
 
@@ -826,7 +829,7 @@ header::after {
     </div>
 
   
-    <!-- QUITA ESTA LÍNEA SI NO QUIERES TEXTO -->
+   
  
 
     <p>Bienestar, estética y experiencia profesional</p>
